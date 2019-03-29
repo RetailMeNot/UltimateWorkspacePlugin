@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>com.rmn.workspace</id>
+  <name>Ultimate Workspace Plugin</name>
+  <version>0.1</version>
+  <vendor url="http://www.retailmenot.com">RetailMeNot, Inc.</vendor>
+
+  <description><![CDATA[
+        The Workspace Plugin was built to support working with Gradle workspace from different repos in the same IDE, so you can build against source for workspace instead of relying on clumsy SNAPSHOT workflow.  The plugin the addition and removal of modules for projects that build against them outside of the current project workspace.<br>
+      - Supports adding and removing modules as source from an Intellij or Android Studio workspace with a single click (currently Gradle only)<br>
+      - When projects are added or removed from a workspace, dependencies of all workspace in the workspace (that the plugin knows about) are automatically adjusted to account for state of the dependency so they build against the appropriate artifact/source<br>
+      - When opening a project in Intellij, dependencies are adjusted to match the modules included in the workspace.<br>
+      - Multi-window support so you it can work across multiple workspaces at the same time<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+    First iteration.
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <project-components>
+    <component>
+      <implementation-class>com.rmn.workspace.ProjectWorkspaceComponent</implementation-class>
+    </component>
+  </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
